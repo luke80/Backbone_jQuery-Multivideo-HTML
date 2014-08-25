@@ -23,6 +23,9 @@ $RECYCLE.BIN/
 **/.sass-cache/*
 **/.sass-cache/**
 
+#eclipse stuff
+
+
 # =========================
 # Operating System Files
 # =========================
