@@ -18,11 +18,133 @@ div {
 	
 }
 
+video {
+  width: 100%    !important;
+  height: auto   !important;
+  min-height:1em;
+}
+
+img {
+	max-height:100%;
+	max-width:100%;
+}
+
+/**
+	*	Menu section
+**/
 .off-canvas-wrap, .inner-wrap {
-	height:100%;
+	/*height:100%;*/
 	min-height:100%;
 }
 
-.left-off-canvas-menu {
+.left-off-canvas-menu .off-canvas-list * {
+	color: #ccc;
 	
+}
+
+.mytitle img {
+	width: 14em;
+}
+
+.left-off-canvas-menu .advertising {
+	width: 33%;
+	display:inline-block;
+	vertical-align:text-top;
+	height: 3em;
+	border:1px solid grey;
+	padding:0.25em;
+	margin:0.75em;
+}
+
+.main {
+	background-color: #d0d0d0;
+	height:100%;
+}
+
+/**
+	*	Video Tile section
+**/
+
+.video-tile {
+	background-color: #ddd;
+	min-width:10em;
+	height:auto;
+	position:relative;
+	min-height:1em;
+	margin:1em;
+	display:inline-block;
+	
+	& .video {
+		position: relative;
+		padding-bottom: 56.25%; /* 16:9 */
+		padding-top: 25px;
+		height: 0;
+		text-align:center;
+		max-width:1080px;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	& .video iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		max-width:1080px;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	
+	/* & .video:before {
+		/* 16:9 aspect ratio * /
+		padding-top: 56.25%;
+	}*/
+}
+.video-tile.video:before{
+}
+
+.full-width {
+	width:calc(100% - 2em);
+	text-align: center;
+	min-height:13em;
+	
+	&.video-tile .video-wrapper {
+		height:30em;
+	}
+	
+	& iframe, & video {
+		margin-left:auto;
+		margin-right:auto;
+		width:100%;
+		height:100%;
+	} 
+}
+.half-width {
+	width:calc(50% - 2em);
+}
+.quarter-width {
+	width:calc(25% - 2em);
+}
+
+/*
+	*	Footer section
+*/
+footer {
+	background-color:#333;
+	color:#e0e0e0;
+	text-align:center;
+	font-size:200%;
+	padding-bottom:2rem;
+}
+footer:after {
+	display:block;
+	width:100%;
+	height:6rem;
+	padding:2rem;
+	content:" ";
+	background-image:url(../img/placeholder.svg);
+	background-size:20em;
+	background-position:center;
+	background-color:#333;
+	background-repeat:no-repeat;
 }
