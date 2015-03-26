@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Development File</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/styles.css" type="text/css" />
+	<script src="js/vendor/jquery-2.1.1.js"></script>
+	<script src="js/vendor/jquery-ui-1.11.0.js"></script>
+	<script src="js/vendor/jquery.smooth-scroll.js"></script>
+	<script src="js/foundation/foundation.js"></script>
+	<script src="js/foundation/foundation.offcanvas.js"></script>
+	<script src="js/vendor/underscore.min.js"></script>
+	<script src="js/vendor/backbone.min.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+	(function($){
+		var debug = true;
+		$(document).foundation();
+		$(document).ready(function () {
+			var closeMenuFunction = function() {
+				if($('.move-right').length > 0) {
+					$('.off-canvas-wrap').foundation('offcanvas', 'toggle', 'move-right');
+					$('.maincontent').unbind("click.menumain");
+					if(debug) console.log("The menu should be closed/closing. The click handler has been removed from the .maincontent element.");
+				}
+			};
+			$('.left-small').bind("click.menu", function() {
+				if(debug) console.log("left-small clicked.");
+				//  Toggle the menu. This institutes the "current" state the user is requesting. (As in, it adds the class we're checking for later.)
+				$('.off-canvas-wrap').foundation('offcanvas', 'toggle', 'move-right');
+				//  Detect the existence of .move-right on the document. If it exists, then the menu is currently open.
+				if($('.move-right').length == 0) {
+					//  The menu has been closed!
+					if(debug) console.log("The menu has been closed!");
+					$('.maincontent').unbind("click.menumain");
+				} else {
+					//  The menu is open!
+					if(debug) console.log("The menu is open!");
+					$('.maincontent').bind("click.menumain", closeMenuFunction);
+				}
+			});
+		});
+	})(jQuery);
+	
+	</script>
+</head>
+<body>
+
+<!-- OFF CANVAS SECTIONS WRAPPING THE MAIN CONTENT -->
+<div class="off-canvas-wrap">
+	<div class="inner-wrap">
+		<!-- OFF CANVAS MENU BAR -->
+		<nav class="tab-bar hide-for-large-up">
+			<section class="left-small">
+				<a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+			</section>
+			<section class="right tab-bar-section">
+				<h1 class="mytitle"><img src="img/logo.png" class="logo" alt="Site Logo"></h1>
+			</section>
+	
+		</nav> <!-- END NAV.TAB-BAR HIDE-FOR-LARGE-UP -->
+	
+		<!-- OFF CANVAS MENU -->
+		<aside class="left-off-canvas-menu">
+			<ul class="off-canvas-list">			
+				<li><label>Menu 1</label></li>
+				<li><a href="#">Thing 1</a></li>
+				<li><a href="#">Thing 2</a></li>
+			</ul>
+			<ul class="off-canvas-list">
+				<li class="has-dropdown"><a href="#">Menu List 1</a>
+					<ul class="off-canvas-list">
+						<li><a href="#">Red Fish</a></li>
+						<li><a href="#">Blue Fish</a></li>
+					</ul>
+				</li>
+			</ul>
+		</aside>
+		
+		
+		<!--	Begin Main Content	-->
+		<div style="height:auto;min-height:100%">
+			Hello World
+		</div>
+		<!--	End Main Content -->
+	</div>
+</div>
+</body>
+</html>
