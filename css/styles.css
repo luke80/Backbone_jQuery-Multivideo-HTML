@@ -1315,7 +1315,145 @@ div {
 }
 
 /* line 21, ../sass/styles.scss */
+video {
+  width: 100%    !important;
+  height: auto   !important;
+  min-height: 1em;
+}
+
+/* line 27, ../sass/styles.scss */
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/**
+	*	Menu section
+**/
+/* line 35, ../sass/styles.scss */
 .off-canvas-wrap, .inner-wrap {
-  height: 100%;
+  /*height:100%;*/
   min-height: 100%;
+}
+
+/* line 40, ../sass/styles.scss */
+.left-off-canvas-menu .off-canvas-list * {
+  color: #ccc;
+}
+
+/* line 45, ../sass/styles.scss */
+.mytitle img {
+  width: 14em;
+}
+
+/* line 49, ../sass/styles.scss */
+.left-off-canvas-menu .advertising {
+  width: 33%;
+  display: inline-block;
+  vertical-align: text-top;
+  height: 3em;
+  border: 1px solid grey;
+  padding: 0.25em;
+  margin: 0.75em;
+}
+
+/* line 59, ../sass/styles.scss */
+.main {
+  background-color: #d0d0d0;
+  height: 100%;
+}
+
+/**
+	*	Video Tile section
+**/
+/* line 68, ../sass/styles.scss */
+.video-tile {
+  background-color: #ddd;
+  min-width: 10em;
+  height: auto;
+  position: relative;
+  min-height: 1em;
+  margin: 1em;
+  display: inline-block;
+  	/* & .video:before {
+  	/* 16:9 aspect ratio * /
+  	padding-top: 56.25%;
+  }*/
+}
+/* line 77, ../sass/styles.scss */
+.video-tile .video {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+  text-align: center;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 87, ../sass/styles.scss */
+.video-tile .video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 106, ../sass/styles.scss */
+.full-width {
+  width: calc(100% - 2em);
+  text-align: center;
+  min-height: 13em;
+}
+/* line 111, ../sass/styles.scss */
+.full-width.video-tile .video-wrapper {
+  height: 30em;
+}
+/* line 115, ../sass/styles.scss */
+.full-width iframe, .full-width video {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 122, ../sass/styles.scss */
+.half-width {
+  width: calc(50% - 2em);
+}
+
+/* line 125, ../sass/styles.scss */
+.quarter-width {
+  width: calc(25% - 2em);
+}
+
+/*
+	*	Footer section
+*/
+/* line 132, ../sass/styles.scss */
+footer {
+  background-color: #333;
+  color: #e0e0e0;
+  text-align: center;
+  font-size: 200%;
+  padding-bottom: 2rem;
+}
+
+/* line 139, ../sass/styles.scss */
+footer:after {
+  display: block;
+  width: 100%;
+  height: 6rem;
+  padding: 2rem;
+  content: " ";
+  background-image: url(../img/placeholder.svg);
+  background-size: 20em;
+  background-position: center;
+  background-color: #333;
+  background-repeat: no-repeat;
 }
